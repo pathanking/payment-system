@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 @Entity
@@ -14,6 +16,9 @@ import javax.persistence.Table;
 public class Sender {
     @Id
     private Integer senderId;
+
+    @NotBlank(message = "Sender Name Can't Be Blank")
     private String name;
+
     private Double balance;
 }
